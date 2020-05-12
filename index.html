@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello, WebVR! • A-Frame</title>
+    <title>Hello WebVR! • Using A-Frame Testing</title>
     <meta name="Creating a test for 3D models for EvCC!" content="EvCC moves to WebVR! • A-Frame">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
@@ -31,8 +31,8 @@
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
         <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
-         <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay
-      preload></audio>
+		<a-asset-item id="gears" src="/Models/gears.gltf"></a-asset-item>
+        <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay preload></audio>
   <!-- ... -->
 </a-assets>
       
@@ -45,18 +45,9 @@
       <a-camera>
     <a-cursor></a-cursor>
   </a-camera>
- 
-      <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
-      <a-entity
-  text="value: Hello, A-Frame!; color: #BBB"
-  position="-0.9 0.2 -3"
-  scale="5 5 5"></a-entity>
-      <! -- Built in forest -- !>
-      <!a-entity environment="preset: forest; dressingAmount: 500"><!/a-entity>
-      <a-light type="ambient" color="white"></a-light>
-      
-      <a-light type="point" intensity="2" position="2 4 4"></a-light>
-      <a-sky src="#skyTexture"></a-sky>
+     
+	 <a-entity gltf-model="#gears"></a-entity>
+     
     </a-scene>
   </body>
 </html>
