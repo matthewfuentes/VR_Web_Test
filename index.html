@@ -5,48 +5,29 @@
     <title>Hello WebVR! • Using A-Frame Testing</title>
     <meta name="Creating a test for 3D models for EvCC!" content="EvCC moves to WebVR! • A-Frame">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    
   </head>
   <body>
     
-    <script>
-  AFRAME.registerComponent('scale-on-mouseenter', {
-    schema: {
-      to: {default: '2.5 2.5 2.5', type: 'vec3'}
-    },
-
-    init: function () {
-      var data = this.data;
-      var el = this.el;
-      this.el.addEventListener('mouseenter', function () {
-        el.object3D.scale.copy(data.to);
-      });
-    }
-  });
-</script>
+   
     
     <a-scene>
       <a-assets>
-  <!-- ... -->
+       <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
         <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
 		<a-asset-item id="gears" src="/Models/gears.gltf"></a-asset-item>
-        <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay preload></audio>
-  <!-- ... -->
-</a-assets>
+       
+      <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
+      </a-assets>
       
       
-      <a-box  src="#boxTexture" position="-1 2 -3" rotation="0 45 45" shadow 
-             animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"
-             animation__mouseenter="property: scale; to: 5 5 2.3; dur: 300; startEvents: mouseenter"
-             animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave">
+      <a-box  src="#boxTexture" position="-1 2 -3" rotation="0 45 45" shadow>       
       </a-box>
-      <a-camera>
-    <a-cursor></a-cursor>
-  </a-camera>
+    
      
-	 <a-entity gltf-model="#gears"></a-entity>
+	 <a-entity gltf-model="#gears" animation-mixer></a-entity>
      
     </a-scene>
   </body>
